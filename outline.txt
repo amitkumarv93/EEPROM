@@ -1,0 +1,22 @@
+1. First I will try to read and write the data through Tx/Rx FIFO of LoRA which is 256 bytes of memory. I will write the data to SPI bus and EEPROM will be used to store the data to the cloud. 
+
+Different modes used for LoRA:
+1. Sleep: SPI and configuration registers accessible. FIFO is not accesible.
+2. STANDBY: PLL disabled
+3. TX: Powers up all the blocks to transmit, ramps the PA, transmits the packet and enters standby.
+4. RX: Powers up all the blocks to receive, remains in this state until a valid packet has been received and then returns to Standby mode.
+5. RX continuous: Powers up all the blocks to receive, processing all received data until a new user request is made to change operating mode.
+
+2. I will try to send and receive student data from UART1. I will add data to EEPROM. I will read data from LORA and transmit 0 or 1 for fail or success.
+
+3. Delete students from PC. 
+
+4. Success/Fail 
+
+5. Add students to csv
+
+6. Success/Fail
+
+7. Finally I will try to convert the data received from RS 232(UART) to USB by using FT232RL interface. Commands will go from Calculator to PC. 
+
+8. Then commands will go from PC to calculator. Download the CSV file. 
